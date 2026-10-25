@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070709">
+  <title>No Cones, No Duals: A Fast and Scalable Solver for NRSfM · WACV 2027</title>
+  <meta name="description" content="No Cones, No Duals by Suryansh Kumar. A fast, scalable, category-agnostic solver for non-rigid structure from motion, accepted at WACV 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="No Cones, No Duals · WACV 2027">
+  <meta property="og:description" content="A Fast and Scalable Solver for NRSfM. Recover camera motion and deforming 3D shape from 2D tracks without external training data.">
+  <meta property="og:image" content="assets/images/first-stage.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="author" content="Suryansh Kumar">
+  <meta name="citation_title" content="No Cones, No Duals: A Fast and Scalable Solver for NRSfM">
+  <meta name="citation_author" content="Kumar, Suryansh">
+  <meta name="citation_publication_date" content="2027">
+  <meta name="citation_conference_title" content="IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)">
+  <meta name="citation_pdf_url" content="assets/papers/main-wacv.pdf">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/hero-method.css">
+  <link rel="stylesheet" href="assets/css/results.css">
+  <script src="data/plot-data.js" defer></script>
+  <script src="assets/js/plots.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <noscript><style>.plot-tabs,.menu-toggle,.gallery-tabs,.copy-button,.select-group{display:none}.video-poster{cursor:pointer}.nav-shell{height:auto;flex-wrap:wrap;padding-block:16px}#site-navigation{display:flex;position:static;width:100%;flex-direction:row;gap:18px;overflow:auto;padding:8px 0;box-shadow:none;border:0}#site-navigation a{padding:4px 0;font-size:12px}.nav-paper{display:none}</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Decorative icons are defined once; all interactive controls have text labels. -->
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="icon-paper" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8zM14 3v5h5M9 12h6M9 16h6"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7z"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="nav-shell wrap">
+      <a class="wordmark" href="#home" aria-label="No Cones, No Duals — home"><span>No Cones, No Duals<span class="brand-dot">.</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
+      <nav id="site-navigation" aria-label="Main navigation">
+        <a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#demo">Demo</a><a href="#citation">Citation</a>
+      </nav>
+      <a class="nav-paper" href="assets/papers/main-wacv.pdf" target="_blank" rel="noopener">Read the paper <svg><use href="#icon-external"/></svg></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO: the author-supplied diagrams introduce the two solver stages. -->
+    <section class="paper-hero" id="home" aria-labelledby="paper-title">
+      <div class="wrap">
+        <div class="paper-hero-intro">
+          <div class="paper-hero-badge"><i aria-hidden="true"></i>WACV 2027<span aria-hidden="true"></span>ACCEPTED PAPER</div>
+          <h1 class="paper-hero-title" id="paper-title">No Cones, <span class="title-second">No Duals.</span><span class="sr-only"> A Fast and Scalable Solver for NRSfM</span></h1>
+          <p class="paper-hero-subtitle">A Fast and Scalable Solver for NRSfM</p>
+          <div class="paper-hero-author"><strong>Suryansh Kumar</strong><span>Visual and Spatial AI Lab · Texas A&amp;M University</span></div>
+          <div class="paper-hero-links">
+            <a class="button button-dark" href="assets/papers/main-wacv.pdf" target="_blank" rel="noopener"><svg><use href="#icon-paper"/></svg>Paper</a>
+            <a class="button button-outline" href="assets/papers/supp-wacv.pdf" target="_blank" rel="noopener"><svg><use href="#icon-paper"/></svg>Supplement</a>
+            <a class="button button-outline" href="#demo"><svg><use href="#icon-play"/></svg>Demo</a>
+            <a class="button button-outline" href="#citation"><span aria-hidden="true">{ }</span>BibTeX</a>
+          </div>
+          <p class="paper-hero-venue">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</p>
+        </div>
+
+        <div class="stage-showcase" aria-label="The two stages of the NRSfM solver">
+          <figure class="stage-panel">
+            <div class="stage-panel-head">
+              <h2><span>STAGE I</span>Rotation estimation</h2>
+              <a class="stage-panel-enlarge" href="assets/images/first-stage.png" data-lightbox data-caption="Stage I: Rotation estimation. Author-supplied diagram showing factor-side Euclidean correction and the final camera projection." aria-label="Enlarge Stage I rotation estimation diagram">Enlarge <svg><use href="#icon-expand"/></svg></a>
+            </div>
+            <a class="stage-panel-image" href="assets/images/first-stage.png" data-lightbox data-caption="Stage I: Rotation estimation. Author-supplied diagram showing factor-side Euclidean correction and the final camera projection.">
+              <img src="assets/images/first-stage.png" width="2048" height="1084" fetchpriority="high" alt="Stage I rotation estimation: optimize small 3D factors, enforce positive-semidefinite and rank structure by construction, and project the final cameras with a Newton–Schulz iteration.">
+            </a>
+            <figcaption><strong>Factor-side Euclidean correction</strong><span>NO CONES</span></figcaption>
+          </figure>
+          <figure class="stage-panel">
+            <div class="stage-panel-head">
+              <h2><span>STAGE II</span>Shape estimation</h2>
+              <a class="stage-panel-enlarge" href="assets/images/second-stage.png" data-lightbox data-caption="Stage II: Shape estimation. Author-supplied diagram showing a fixed-depth unrolled solver, weighted singular-value thresholding, and FISTA-style proximal updates." aria-label="Enlarge Stage II shape estimation diagram">Enlarge <svg><use href="#icon-expand"/></svg></a>
+            </div>
+            <a class="stage-panel-image" href="assets/images/second-stage.png" data-lightbox data-caption="Stage II: Shape estimation. Author-supplied diagram showing a fixed-depth unrolled solver, weighted singular-value thresholding, and FISTA-style proximal updates.">
+              <img src="assets/images/second-stage.png" width="2048" height="1130" fetchpriority="high" alt="Stage II shape estimation: fixed-depth unrolled optimization layers combine weighted singular-value thresholding with FISTA-based proximal updates.">
+            </a>
+            <figcaption><strong>Unrolled spectral-proximal updates</strong><span>NO DUALS</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="paper-hero-summary"><span>THE IDEA</span><p>Recover camera motion and deforming 3D shape from 2D tracks with a fast, category-agnostic solver. <strong>No external training data.</strong></p><a href="#overview" aria-label="Explore the paper">↓</a></div>
+      </div>
+    </section>
+
+    <section class="highlights wrap" aria-label="Research highlights">
+      <div><span class="stat-label">DENSE TRACKS</span><strong>28,887 <small>points</small></strong><p>per dense face sequence<br><a href="#dense-benchmarks">Explore the dense benchmark ↗</a></p></div>
+      <div><span class="stat-label">DENSE TOTAL RUNTIME</span><strong>8.18–15.16 <small>s</small></strong><p>rotation + shape across four sequences<br><a href="assets/papers/main-wacv.pdf#page=7" target="_blank" rel="noopener">Main paper · Table 5 ↗</a></p></div>
+      <div><span class="stat-label">1,102-FRAME DRINK SEQUENCE</span><strong>14.96 <small>s</small></strong><p>complete rotation + shape recovery<br><a href="#stage-benchmarks">Explore the stage timings ↗</a></p></div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section wrap overview" id="overview" aria-labelledby="overview-title">
+      <div class="section-heading"><span class="eyebrow">01 / THE IDEA</span><h2 id="overview-title">Same geometry.<br>A new way to solve it.</h2></div>
+      <div class="overview-text">
+        <p class="lead">Non-rigid structure from motion turns tracked 2D points into a moving 3D world.</p>
+        <p>Both the camera and the object can move. Recovering them together calls for geometric constraints and a compact model of deformation. This work retains the low-rank representation of shape-space factorization and introduces a faster solver for each of its two stages.</p>
+        <p>Small per-sequence factors recover camera rotations. A fixed sequence of reprojection and spectral-shrinkage steps recovers shape. The result is a category-agnostic solver built from accelerator-friendly linear algebra, with competitive reconstruction accuracy across sparse, dense, noisy, and missing-data benchmarks.</p>
+        <div class="scope-tags"><span>Orthographic cameras</span><span>Tracked 2D points</span><span>Low-rank 3D shape</span></div>
+        <details class="abstract-details"><summary>Read the full abstract <span aria-hidden="true">+</span></summary><div class="abstract-body"><p>Non-rigid structure from motion (NRSfM) aims to recover camera motion and time-varying 3D shape from tracked 2D image measurements. Recent high-performing methods show that shape-space factorization remains highly effective for this task. These methods often use costly solvers for two key steps. First, a semidefinite programming (SDP) cone solver to perform Euclidean correction. Next, an alternating direction method of multipliers (ADMM) solver to recover the low-rank shape. These steps often scale poorly to long sequences and dense point tracks. We propose a fast and scalable NRSfM solver that avoids SDP cone solvers and ADMM dual updates.</p><p>For rotation estimation, we introduce a differentiable Euclidean correction that directly optimizes small factors for each sequence. A row-polar projection then maps each estimated camera block to the closest row-orthonormal matrix. For shape estimation, we introduce an unrolled spectral-proximal solver. It combines reprojection-gradient steps with weighted singular-value shrinkage in the reshuffled shape domain. This solver further uses FISTA-style restart and continuation. The spectral shrinkage operator itself is classical, but we embed it in a fixed differentiable solver that removes ADMM dual variables and large shape-subproblem solves, while preserving NRSfM's geometric constraints.</p><p>The proposed approach is category-agnostic, requires no external training data, and maps naturally to modern accelerator-friendly linear algebra primitives. Across sparse, dense, noisy, missing-data, and long-sequence benchmarks, our solver achieves substantial speedups with competitive reconstruction accuracy, including 7x-1000x runtime improvements on dense sequences with 28,887 tracked points.</p></div></details>
+      </div>
+    </section>
+
+    <!-- METHOD -->
+    <section class="method-section" id="method" aria-labelledby="method-title">
+      <div class="wrap section">
+        <div class="section-top"><div><span class="eyebrow">02 / THE METHOD</span><h2 id="method-title">Two stages.<br>One efficient pipeline.</h2></div><p class="section-intro">Direct factor optimization for cameras.<br>Unrolled spectral updates for shape.</p></div>
+        <div class="method-grid">
+          <article class="method-card camera-card"><div class="card-topline"><span>01 — CAMERA RECOVERY</span><span class="stage-icon" aria-hidden="true">R</span></div><h3>No cones.</h3><p>Optimize small factors directly for Euclidean correction, then project each estimated camera block to its closest row-orthonormal matrix.</p><div class="math-line" aria-label="Q sub k equals Y sub k times Y sub k transpose">Q<sub>k</sub> = Y<sub>k</sub>Y<sub>k</sub><sup>T</sup><span class="math-arrow" aria-hidden="true">→</span><span>R<sub>i</sub>R<sub>i</sub><sup>T</sup> = I<sub>2</sub></span></div><div class="method-bottom"><span>Factor-side correction</span><span>Row-polar projection</span></div></article>
+          <article class="method-card shape-card"><div class="card-topline"><span>02 — SHAPE RECOVERY</span><span class="stage-icon" aria-hidden="true">S</span></div><h3>No duals.</h3><p>Alternate masked reprojection-gradient steps with weighted singular-value shrinkage. FISTA-style restart and continuation stabilize the unrolled computation.</p><div class="solver-steps" aria-label="Repeated shape-solver steps"><span>Gradient</span><b aria-hidden="true">→</b><span>Shrink</span><b aria-hidden="true">→</b><span>Accelerate</span></div><div class="method-bottom"><span>160 fixed shape steps</span><span>Low-rank structure</span></div></article>
+        </div>
+        <!--figure class="pipeline-figure"><div class="figure-topline"><span>THE COMPLETE COMPUTATIONAL PIPELINE</span><a href="assets/images/method-pipeline.webp" data-lightbox data-caption="Complete solver pipeline. Original Figure 9 from the supplementary material." class="expand-link">Enlarge <svg><use href="#icon-expand"/></svg></a></div><img src="assets/images/method-pipeline.webp" width="2001" height="656" loading="lazy" alt="Pipeline: measurement matrix, SVD, Euclidean correction and recovered camera rotations, followed by masked gradient steps, shape reshaping, spectral shrinkage, FISTA restart and continuation."><figcaption>Original pipeline from <a href="assets/papers/supp-wacv.pdf#page=3" target="_blank" rel="noopener">supplementary Figure 9</a>. The factors are optimized independently for each sequence.</figcaption></figure-->
+      </div>
+    </section>
+
+    <!-- PERFORMANCE: original vector plots drawn from the reported table values. -->
+    <section class="section wrap performance-section" id="results" aria-labelledby="results-title">
+      <div class="section-top">
+        <div><span class="eyebrow">03 / SPEED &amp; ACCURACY</span><h2 id="results-title">The results,<br>in perspective.</h2></div>
+        <p class="section-intro">Dense tracks, motion capture, and the cost of each solver stage. Explore the measurements behind the method.</p>
+      </div>
+
+      <article class="plot-card dense-plot-card" id="dense-benchmarks">
+        <div class="plot-card-heading">
+          <div><span class="plot-kicker">DENSE RECONSTRUCTION</span><h3>28,887 points. Four sequences.</h3><p>Compare total runtime and normalized 3D reconstruction error.</p></div>
+          <div class="plot-tabs" role="tablist" aria-label="Dense reconstruction metric">
+            <button id="plot-tab-runtime" type="button" role="tab" aria-selected="true" aria-controls="plot-panel-runtime">Runtime</button>
+            <button id="plot-tab-accuracy" type="button" role="tab" aria-selected="false" aria-controls="plot-panel-accuracy" tabindex="-1">3D error</button>
+          </div>
+        </div>
+
+        <div class="plot-panel" id="plot-panel-runtime" role="tabpanel" aria-labelledby="plot-tab-runtime">
+          <figure>
+            <a class="plot-image-link" href="assets/plots/dense-runtime.svg" data-lightbox data-caption="Dense face reconstruction: overall runtime in seconds for Ours, OPM, and TSM on all four sequences. Shared logarithmic axis. Main paper, Table 5; Ours totals agree with supplementary Table 14." aria-label="Enlarge the dense runtime plot">
+              <picture><source media="(max-width:600px)" srcset="assets/plots/dense-runtime-mobile.svg"><img src="assets/plots/dense-runtime.svg" width="792" height="324" loading="lazy" alt="Dense runtime comparison on a logarithmic axis. Our total times are 8.29, 8.18, 15.01, and 15.16 seconds for Face sequences 1 through 4, compared with OPM at 55.60 to 102.19 seconds and TSM at 10,500.35 to 11,624.89 seconds."></picture>
+            </a>
+            <figcaption><span>Rotation + shape · seconds · logarithmic axis · lower is better</span><a href="assets/plots/dense-runtime.svg" download>Download SVG <span aria-hidden="true">↓</span></a></figcaption>
+          </figure>
+          <details class="plot-data" data-table="dense-runtime" hidden><summary>View exact values <span aria-hidden="true">+</span></summary><div class="data-table-scroll" tabindex="0" role="region" aria-label="Dense runtime data table"></div></details>
+        </div>
+
+        <div class="plot-panel" id="plot-panel-accuracy" role="tabpanel" aria-labelledby="plot-tab-accuracy">
+          <figure>
+            <a class="plot-image-link" href="assets/plots/dense-accuracy.svg" data-lightbox data-caption="Mean normalized 3D reconstruction error for the same dense sequences and three methods. Linear error axis, lower is better. Redrawn from main paper, Table 5." aria-label="Enlarge the dense reconstruction error plot">
+              <picture><source media="(max-width:600px)" srcset="assets/plots/dense-accuracy-mobile.svg"><img src="assets/plots/dense-accuracy.svg" width="792" height="324" loading="lazy" alt="Normalized 3D reconstruction error for Ours, OPM, and TSM across four dense face sequences. Our errors are 0.0774, 0.0442, 0.0382, and 0.0522. The linear axis makes accuracy differences visible."></picture>
+            </a>
+            <figcaption><span>Mean normalized 3D error, e₃d · linear axis · lower is better</span><a href="assets/plots/dense-accuracy.svg" download>Download SVG <span aria-hidden="true">↓</span></a></figcaption>
+          </figure>
+          <details class="plot-data" data-table="dense-accuracy" hidden><summary>View exact values <span aria-hidden="true">+</span></summary><div class="data-table-scroll" tabindex="0" role="region" aria-label="Dense reconstruction error data table"></div></details>
+        </div>
+
+        <div class="plot-insights">
+          <div><span>OUR TOTAL RUNTIME</span><strong>8.18–15.16 <small>s</small></strong><p>Across the four dense face sequences</p></div>
+          <div><span>VERSUS OPM</span><strong>6.6–6.7<small>×</small></strong><p>Ratio of reported runtimes</p></div>
+          <div><span>VERSUS TSM</span><strong>766–1,323<small>×</small></strong><p>Ratio of reported runtimes</p></div>
+        </div>
+        <p class="plot-source">Source: <a href="assets/papers/main-wacv.pdf#page=7" target="_blank" rel="noopener">main paper, Table 5</a>. Each sequence contains 28,887 points; sequences 1–2 have 10 frames and sequences 3–4 have 99. <a href="data/dense-table5.csv" download>Download data ↗</a></p>
+      </article>
+
+      <div class="plots-pair">
+        <article class="plot-card" id="mocap-benchmarks">
+          <div class="plot-card-heading"><div><span class="plot-kicker">MOTION CAPTURE</span><h3>Accuracy meets efficiency.</h3><p>Five methods. Mean performance over eight sequences.</p></div></div>
+          <figure>
+            <a class="plot-image-link" href="assets/plots/mocap-tradeoff.svg" data-lightbox data-caption="MoCap accuracy–runtime tradeoff. Each point is an unweighted arithmetic mean over the same eight sequences in main Table 3. Horizontal axis: shape-stage runtime only, logarithmic seconds. Vertical axis: mean normalized 3D error, linear. Lower and left are better." aria-label="Enlarge the motion capture accuracy and runtime plot">
+              <picture><source media="(max-width:600px)" srcset="assets/plots/mocap-tradeoff-mobile.svg"><img src="assets/plots/mocap-tradeoff.svg" width="475" height="374" loading="lazy" alt="Mean normalized 3D error versus mean shape-stage runtime over eight sequences. Ours: 5.64 seconds and 0.0405 error; OPM: 12.08 seconds and 0.0399; R-BMM: 14.22 seconds and 0.0463; TSM: 28.94 seconds and 0.0305; BMM: 125.87 seconds and 0.1245."></picture>
+            </a>
+            <figcaption><span>Shape stage · mean of 8 sequences</span><a href="assets/plots/mocap-tradeoff.svg" download>SVG ↓</a></figcaption>
+          </figure>
+          <details class="plot-data" data-table="mocap-means" hidden><summary>View exact values <span aria-hidden="true">+</span></summary><div class="data-table-scroll" tabindex="0" role="region" aria-label="Motion capture mean error and runtime data table"></div></details>
+          <p class="plot-source">Arithmetic means calculated from <a href="assets/papers/main-wacv.pdf#page=7" target="_blank" rel="noopener">main paper, Table 3</a>. Runtime covers shape recovery with rotations fixed. <a href="data/mocap-shape-table3.csv" download>Download sequence data ↗</a></p>
+        </article>
+
+        <article class="plot-card" id="stage-benchmarks">
+          <div class="plot-card-heading"><div><span class="plot-kicker">INSIDE THE SOLVER</span><h3>Two stages. Every second.</h3><p>Rotation and shape recovery across eight MoCap sequences.</p></div></div>
+          <figure>
+            <a class="plot-image-link" href="assets/plots/stage-timing.svg" data-lightbox data-caption="Our solver's stage-wise times on eight MoCap sequences. Rotation and shape times add to each labeled total; the axis starts at zero. Supplementary Table 14." aria-label="Enlarge the stage-wise timing plot">
+              <picture><source media="(max-width:600px)" srcset="assets/plots/stage-timing-mobile.svg"><img src="assets/plots/stage-timing.svg" width="475" height="374" loading="lazy" alt="Stacked horizontal bars separate rotation and shape recovery time. Drink has 8.51 seconds for rotation and 6.45 seconds for shape, totaling 14.96 seconds for 1,102 frames."></picture>
+            </a>
+            <figcaption><span>Our solver · linear seconds · rotation + shape</span><a href="assets/plots/stage-timing.svg" download>SVG ↓</a></figcaption>
+          </figure>
+          <details class="plot-data" data-table="stage-times" hidden><summary>View exact values <span aria-hidden="true">+</span></summary><div class="data-table-scroll" tabindex="0" role="region" aria-label="Per-sequence rotation shape and total runtime data table"></div></details>
+          <p class="plot-source">Source: <a href="assets/papers/supp-wacv.pdf#page=8" target="_blank" rel="noopener">supplement, Table 14</a>. Drink spans 1,102 frames and 41 points; its total solve takes 14.96 seconds. <a href="data/stage-breakdown-table14.csv" download>Download data ↗</a></p>
+        </article>
+      </div>
+
+      <p class="timing-note" id="timing-note">All plots use the paper’s reported measurements. Hardware and released implementations vary; see the experimental setup for timing conditions. <a href="data/PROVENANCE.md" target="_blank" rel="noopener">Data sources and definitions ↗</a></p>
+    </section>
+
+
+    <!-- QUALITATIVE RESULTS: all panels are available without JavaScript. -->
+    <section class="gallery-section" id="reconstructions" aria-labelledby="gallery-title">
+      <div class="section wrap"><div class="section-top"><div><span class="eyebrow">04 / RECONSTRUCTIONS</span><h2 id="gallery-title">Different motions.<br>One geometric framework.</h2></div><p class="section-intro">From articulated objects and tearing paper to dense faces and whole-body motion. Explore original results from the supplementary material.</p></div>
+        <div class="gallery-tabs" role="tablist" aria-label="Reconstruction datasets"><button id="tab-challenge" role="tab" aria-controls="panel-challenge" aria-selected="true" type="button">Deforming objects</button><button id="tab-faces" role="tab" aria-controls="panel-faces" aria-selected="false" type="button" tabindex="-1">Dense faces</button><button id="tab-mocap" role="tab" aria-controls="panel-mocap" aria-selected="false" type="button" tabindex="-1">Motion capture</button><button id="tab-body" role="tab" aria-controls="panel-body" aria-selected="false" type="button" tabindex="-1">Whole-body motion</button></div>
+        <div class="gallery-panels">
+          <figure class="gallery-panel" id="panel-challenge" role="tabpanel" aria-labelledby="tab-challenge"><a href="assets/images/challenge-reconstructions.webp" class="gallery-image-link" data-lightbox data-caption="NRSfM Challenge: observations above, reconstructed 3D points below. Blue: ground truth; red: estimated. Supplementary Figure 12."><img src="assets/images/challenge-reconstructions.webp" width="3038" height="1044" alt="Articulated object, balloon, bending paper, stretching surface and tearing paper, with ground-truth and recovered 3D points shown below each input." loading="lazy"><span class="image-expand"><svg><use href="#icon-expand"/></svg>Inspect figure</span></a><figcaption><div><strong>From articulation to tearing.</strong><span>Observations above; recovered 3D points below. Blue marks ground truth, red marks the estimate.</span></div><a href="assets/papers/supp-wacv.pdf#page=10" target="_blank" rel="noopener">Supplement · Fig. 12 ↗</a></figcaption></figure>
+          <figure class="gallery-panel" id="panel-faces" role="tabpanel" aria-labelledby="tab-faces"><a href="assets/images/dense-face-reconstructions.webp" class="gallery-image-link" data-lightbox data-caption="Four dense face reconstructions, each with 28,887 tracked points. Supplementary Figure 14."><img src="assets/images/dense-face-reconstructions.webp" width="2101" height="534" alt="Four recovered dense 3D faces from the synthetic face sequences." loading="lazy"><span class="image-expand"><svg><use href="#icon-expand"/></svg>Inspect figure</span></a><figcaption><div><strong>Fine-scale facial deformation.</strong><span>Four synthetic face sequences with 28,887 tracked points each. Color shows the first-order deformation field.</span></div><a href="assets/papers/supp-wacv.pdf#page=10" target="_blank" rel="noopener">Supplement · Fig. 14 ↗</a></figcaption></figure>
+          <figure class="gallery-panel" id="panel-mocap" role="tabpanel" aria-labelledby="tab-mocap"><a href="assets/images/mocap-reconstructions.webp" class="gallery-image-link" data-lightbox data-caption="Reconstructed Drink, Pickup, Stretch, and Yoga sequences. Supplementary Figure 13."><img src="assets/images/mocap-reconstructions.webp" width="2020" height="548" alt="Reconstruction examples for the Drink, Pickup, Stretch, and Yoga motion-capture sequences." loading="lazy"><span class="image-expand"><svg><use href="#icon-expand"/></svg>Inspect figure</span></a><figcaption><div><strong>Sparse tracks, expressive 3D motion.</strong><span>Representative reconstructions of Drink, Pickup, Stretch, and Yoga.</span></div><a href="assets/papers/supp-wacv.pdf#page=10" target="_blank" rel="noopener">Supplement · Fig. 13 ↗</a></figcaption></figure>
+          <figure class="gallery-panel" id="panel-body" role="tabpanel" aria-labelledby="tab-body"><a href="assets/images/whole-body-reconstructions.webp" class="gallery-image-link" data-lightbox data-caption="Whole-body reconstructions on H3WB, including body, face and hand keypoints. Supplementary Figure 11."><img src="assets/images/whole-body-reconstructions.webp" width="2001" height="459" alt="Five whole-body 3D reconstruction examples, with detailed hand and face keypoints." loading="lazy"><span class="image-expand"><svg><use href="#icon-expand"/></svg>Inspect figure</span></a><figcaption><div><strong>Body, hands, and face together.</strong><span>Whole-body motion on H3WB with 133 tracked keypoints.</span></div><a href="assets/papers/supp-wacv.pdf#page=10" target="_blank" rel="noopener">Supplement · Fig. 11 ↗</a></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO: direct YouTube link. Change data-embed to true after enabling embedding on YouTube. -->
+    <section class="video-section" id="demo" aria-labelledby="demo-title"><div class="wrap section"><div class="section-top"><div><span class="eyebrow">05 / SEE IT IN MOTION</span><h2 id="demo-title">The reconstructions,<br>in motion.</h2></div><a class="text-link" href="https://www.youtube.com/watch?v=NO25k2dfSFE" target="_blank" rel="noopener">Watch on YouTube <svg><use href="#icon-external"/></svg></a></div><div class="video-frame" id="video-frame"><a class="video-poster" id="play-demo" data-embed="false" href="https://www.youtube.com/watch?v=NO25k2dfSFE" target="_blank" rel="noopener" aria-label="Watch the No Cones, No Duals reconstruction demo on YouTube"><div class="video-poster-art"><img src="assets/images/WACV-2027-first-slide.png" width="3038" height="493" loading="lazy" alt="Representative observed objects from the reconstruction benchmark."></div><span class="play-disc"><svg><use href="#icon-play"/></svg></span>WATCH THE DEMO ON YOUTUBE</span></span><span class="video-corner">WACV 2027 ↗</span></a></div><p class="video-note"><a href="https://www.youtube.com/watch?v=NO25k2dfSFE" target="_blank" rel="noopener">Watch the full reconstruction demonstration on YouTube</a>. Poster imagery is from the paper’s benchmark figures.</p></div></section>
+
+    <!-- RESOURCES / CITATION -->
+    <section class="section wrap resources" id="citation" aria-labelledby="citation-title"><div class="citation-intro"><span class="eyebrow">06 / TAKE A CLOSER LOOK</span><h2 id="citation-title">Read. Explore.<br>Build on it.</h2><p>Full derivations, experimental details, ablations, and additional reconstructions are available in the paper and supplement.</p><div class="resource-links"><a href="assets/papers/main-wacv.pdf" target="_blank" rel="noopener"><span><svg><use href="#icon-paper"/></svg>Main paper</span><span>PDF ↗</span></a><a href="assets/papers/supp-wacv.pdf" target="_blank" rel="noopener"><span><svg><use href="#icon-paper"/></svg>Supplementary material</span><span>PDF ↗</span></a><a href="citation.bib" download><span><svg><use href="#icon-copy"/></svg>Citation</span><span>BIB ↓</span></a></div></div><div class="citation-card"><div class="citation-header"><span>BibTeX</span><button class="copy-button" id="copy-citation" type="button"><svg><use href="#icon-copy"/></svg><span>Copy citation</span></button></div><pre><code id="bibtex">@inproceedings{kumar2027nocones,
+  title = {No Cones, No Duals: A Fast and Scalable Solver for {NRSfM}},
+  author = {Kumar, Suryansh},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year = {2027}
+}</code></pre><div class="citation-footer"><span>Accepted at WACV 2027</span><span id="copy-status" role="status" aria-live="polite"></span></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="wordmark" href="#home"><span>No Cones, No Duals<span class="brand-dot">.</span></span></a><p>Suryansh Kumar · Texas A&amp;M University<br><span>WACV 2027</span></p><a href="#home" class="back-top">Back to top ↑</a></div></footer>
+  <dialog class="lightbox" id="figure-dialog" aria-label="Expanded research figure"><div class="lightbox-toolbar"><span>RESEARCH FIGURE</span><button id="close-lightbox" class="icon-button" type="button" aria-label="Close expanded figure"><svg><use href="#icon-close"/></svg></button></div><div class="lightbox-image-wrap"><img id="lightbox-image" src="assets/images/first-stage.png" alt=""></div><div class="lightbox-footer"><p id="lightbox-caption"></p><a id="lightbox-original" href="assets/images/first-stage.png" target="_blank" rel="noopener">Open full resolution ↗</a></div></dialog>
+</body>
+</html>
