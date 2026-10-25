@@ -1,0 +1,13 @@
+benchmark,sequence,frames,points,rotation_seconds,shape_seconds,total_seconds,source,page,table
+CMU MoCap,Drink,1102,41,8.51,6.45,14.96,supp-wacv.pdf,8,14
+CMU MoCap,Pickup,357,41,7.79,4.88,12.67,supp-wacv.pdf,8,14
+CMU MoCap,Yoga,307,41,7.73,4.19,11.92,supp-wacv.pdf,8,14
+CMU MoCap,Stretch,370,41,7.83,4.21,12.04,supp-wacv.pdf,8,14
+CMU MoCap,Dance,264,75,8.57,6.39,14.96,supp-wacv.pdf,8,14
+CMU MoCap,Face,316,40,8.42,4.66,13.08,supp-wacv.pdf,8,14
+CMU MoCap,Walking,260,55,8.52,4.84,13.36,supp-wacv.pdf,8,14
+CMU MoCap,Shark,240,91,8.27,9.51,17.78,supp-wacv.pdf,8,14
+Dense faces,Face Seq.1,10,28887,1.24,7.05,8.29,supp-wacv.pdf,8,14
+Dense faces,Face Seq.2,10,28887,1.25,6.93,8.18,supp-wacv.pdf,8,14
+Dense faces,Face Seq.3,99,28887,1.73,13.28,15.01,supp-wacv.pdf,8,14
+Dense faces,Face Seq.4,99,28887,1.65,13.51,15.16,supp-wacv.pdf,8,14

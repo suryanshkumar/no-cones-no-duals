@@ -1,0 +1,21 @@
+sequence,frames,points,K,method,error_eR,tsm_refined_error_eR,runtime_seconds,runtime_scope,source,page,table
+Drink,1102,41,11,BMM,0.0086,,10.01,rotation stage,main-wacv.pdf,6,2
+Drink,1102,41,11,R-BMM,0.024,,108.91,rotation stage,main-wacv.pdf,6,2
+Drink,1102,41,11,OPM,0.0096,,143.54,rotation stage,main-wacv.pdf,6,2
+Drink,1102,41,11,TSM,0.0086,1.395,88.94,rotation stage,main-wacv.pdf,6,2
+Drink,1102,41,11,Ours,0.006,,8.51,rotation stage,main-wacv.pdf,6,2
+Pickup,357,41,12,BMM,0.121,,9.68,rotation stage,main-wacv.pdf,6,2
+Pickup,357,41,12,R-BMM,0.1271,,96.24,rotation stage,main-wacv.pdf,6,2
+Pickup,357,41,12,OPM,0.1144,,98.87,rotation stage,main-wacv.pdf,6,2
+Pickup,357,41,12,TSM,0.121,1.3197,14.79,rotation stage,main-wacv.pdf,6,2
+Pickup,357,41,12,Ours,0.1082,,7.79,rotation stage,main-wacv.pdf,6,2
+Yoga,307,41,11,BMM,0.0945,,8.08,rotation stage,main-wacv.pdf,6,2
+Yoga,307,41,11,R-BMM,0.0944,,70.08,rotation stage,main-wacv.pdf,6,2
+Yoga,307,41,11,OPM,0.0972,,76.88,rotation stage,main-wacv.pdf,6,2
+Yoga,307,41,11,TSM,0.0945,0.1114,10.48,rotation stage,main-wacv.pdf,6,2
+Yoga,307,41,11,Ours,0.0996,,7.73,rotation stage,main-wacv.pdf,6,2
+Stretch,370,41,13,BMM,0.0682,,8.45,rotation stage,main-wacv.pdf,6,2
+Stretch,370,41,13,R-BMM,0.0682,,73.32,rotation stage,main-wacv.pdf,6,2
+Stretch,370,41,13,OPM,0.0688,,115.06,rotation stage,main-wacv.pdf,6,2
+Stretch,370,41,13,TSM,0.0682,1.4116,19.4,rotation stage,main-wacv.pdf,6,2
+Stretch,370,41,13,Ours,0.0647,,7.83,rotation stage,main-wacv.pdf,6,2

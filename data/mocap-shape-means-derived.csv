@@ -1,0 +1,6 @@
+method,sequence_count,mean_error_e3d,mean_runtime_seconds,aggregation,source,page,table
+BMM,8,0.1244625,125.86999999999999,unweighted arithmetic mean of the eight Table 3 sequences,main-wacv.pdf,7,3
+R-BMM,8,0.0462625,14.22,unweighted arithmetic mean of the eight Table 3 sequences,main-wacv.pdf,7,3
+OPM,8,0.039875,12.0825,unweighted arithmetic mean of the eight Table 3 sequences,main-wacv.pdf,7,3
+TSM,8,0.030512499999999998,28.938750000000002,unweighted arithmetic mean of the eight Table 3 sequences,main-wacv.pdf,7,3
+Ours,8,0.040475000000000004,5.64125,unweighted arithmetic mean of the eight Table 3 sequences,main-wacv.pdf,7,3

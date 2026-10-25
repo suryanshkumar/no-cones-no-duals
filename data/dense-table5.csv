@@ -1,0 +1,33 @@
+sequence,frames,points,K,method,error_e3d,runtime_seconds,runtime_scope,training_note,source,page,table
+Face Seq.1,10,28887,1,SMSR,0.1893,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.1,10,28887,1,DS,0.0636,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.1,10,28887,1,GM,0.0443,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.1,10,28887,1,ND,,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.1,10,28887,1,DV,0.0531,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.1,10,28887,1,OPM,0.0624,55.6,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.1,10,28887,1,TSM,0.2223,10964.22,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.1,10,28887,1,Ours,0.0774,8.29,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.2,10,28887,1,SMSR,0.2133,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.2,10,28887,1,DS,0.0569,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.2,10,28887,1,GM,0.0381,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.2,10,28887,1,ND,,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.2,10,28887,1,DV,0.0457,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.2,10,28887,1,OPM,0.0451,53.87,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.2,10,28887,1,TSM,0.1271,10500.35,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.2,10,28887,1,Ours,0.0442,8.18,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.3,99,28887,1,SMSR,0.1345,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.3,99,28887,1,DS,0.0374,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.3,99,28887,1,GM,0.0294,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.3,99,28887,1,ND,0.045,,overall solver runtime,3h+ train,main-wacv.pdf,7,5
+Face Seq.3,99,28887,1,DV,0.0346,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.3,99,28887,1,OPM,0.0279,100.72,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.3,99,28887,1,TSM,0.0393,11624.89,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.3,99,28887,1,Ours,0.0382,15.01,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.4,99,28887,1,SMSR,0.0984,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.4,99,28887,1,DS,0.0428,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.4,99,28887,1,GM,0.0309,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.4,99,28887,1,ND,0.049,,overall solver runtime,3h+ train,main-wacv.pdf,7,5
+Face Seq.4,99,28887,1,DV,0.0379,,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.4,99,28887,1,OPM,0.0419,102.19,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.4,99,28887,1,TSM,0.0615,11609.17,overall solver runtime,,main-wacv.pdf,7,5
+Face Seq.4,99,28887,1,Ours,0.0522,15.16,overall solver runtime,,main-wacv.pdf,7,5
