@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="331.2pt" height="475.2pt" viewBox="0 0 331.2 475.2" version="1.1" role="img" aria-labelledby="stage-timing-mobile-title stage-timing-mobile-description">
+ <title id="stage-timing-mobile-title">Stage Timing</title><desc id="stage-timing-mobile-description">Our two-stage solver runtime on eight CMU MoCap sequences. Stacked segments show rotation recovery and shape recovery in seconds, and labels at the bar ends show total time. Linear axis starts at zero. Supplementary material Table 14, page 8. Drink: 8.51 plus 6.45 equals 14.96 seconds for 1,102 frames.</desc><metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:description>Our two-stage solver runtime on eight CMU MoCap sequences. Stacked segments show rotation recovery and shape recovery in seconds, and labels at the bar ends show total time. Linear axis starts at zero. Supplementary material Table 14, page 8. Drink: 8.51 plus 6.45 equals 14.96 seconds for 1,102 frames.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 475.2  L 331.2 475.2  L 331.2 0  L 0 0  z " style="fill: #101014" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 79.488 394.416  L 324.576 394.416  L 324.576 61.776  L 79.488 61.776  z " style="fill: #101014" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 79.488 394.416  L 79.488 61.776  " clip-path="url(#pdf69ea3f83)" style="fill: none; stroke: #303038; stroke-opacity: 0.75; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_2" />
+     <g id="text_1">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: middle; fill: #b6b6c4" x="79.488" y="412.154203" transform="rotate(-0 79.488 412.154203)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 137.842286 394.416  L 137.842286 61.776  " clip-path="url(#pdf69ea3f83)" style="fill: none; stroke: #303038; stroke-opacity: 0.75; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_4" />
+     <g id="text_2">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: middle; fill: #b6b6c4" x="137.842286" y="412.154203" transform="rotate(-0 137.842286 412.154203)">5</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 196.196571 394.416  L 196.196571 61.776  " clip-path="url(#pdf69ea3f83)" style="fill: none; stroke: #303038; stroke-opacity: 0.75; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_6" />
+     <g id="text_3">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: middle; fill: #b6b6c4" x="196.196571" y="412.154203" transform="rotate(-0 196.196571 412.154203)">10</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 254.550857 394.416  L 254.550857 61.776  " clip-path="url(#pdf69ea3f83)" style="fill: none; stroke: #303038; stroke-opacity: 0.75; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_8" />
+     <g id="text_4">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: middle; fill: #b6b6c4" x="254.550857" y="412.154203" transform="rotate(-0 254.550857 412.154203)">15</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 312.905143 394.416  L 312.905143 61.776  " clip-path="url(#pdf69ea3f83)" style="fill: none; stroke: #303038; stroke-opacity: 0.75; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="line2d_10" />
+     <g id="text_5">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: middle; fill: #b6b6c4" x="312.905143" y="412.154203" transform="rotate(-0 312.905143 412.154203)">20</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: middle; fill: #b6b6c4" x="202.032" y="437.284047" transform="rotate(-0 202.032 437.284047)">Rotation + shape runtime (seconds)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11" />
+     <g id="text_7">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: end; fill: #b6b6c4" x="70.488" y="95.845102" transform="rotate(-0 70.488 95.845102)">Drink</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_12" />
+     <g id="text_8">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: end; fill: #b6b6c4" x="70.488" y="135.445102" transform="rotate(-0 70.488 135.445102)">Pickup</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_13" />
+     <g id="text_9">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: end; fill: #b6b6c4" x="70.488" y="175.045102" transform="rotate(-0 70.488 175.045102)">Yoga</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_14" />
+     <g id="text_10">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: end; fill: #b6b6c4" x="70.488" y="214.645102" transform="rotate(-0 70.488 214.645102)">Stretch</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_15" />
+     <g id="text_11">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: end; fill: #b6b6c4" x="70.488" y="254.245102" transform="rotate(-0 70.488 254.245102)">Dance</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_16" />
+     <g id="text_12">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: end; fill: #b6b6c4" x="70.488" y="293.845102" transform="rotate(-0 70.488 293.845102)">Face</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_17" />
+     <g id="text_13">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: end; fill: #b6b6c4" x="70.488" y="333.445102" transform="rotate(-0 70.488 333.445102)">Walking</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_18" />
+     <g id="text_14">
+      <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: end; fill: #b6b6c4" x="70.488" y="373.045102" transform="rotate(-0 70.488 373.045102)">Shark</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 79.488 100.98  L 178.806994 100.98  L 178.806994 81.972  L 79.488 81.972  z " clip-path="url(#pdf69ea3f83)" style="fill: #a7b0ff" />
+   </g>
+   <g id="patch_4">
+    <path d="M 79.488 140.58  L 170.403977 140.58  L 170.403977 121.572  L 79.488 121.572  z " clip-path="url(#pdf69ea3f83)" style="fill: #a7b0ff" />
+   </g>
+   <g id="patch_5">
+    <path d="M 79.488 180.18  L 169.703726 180.18  L 169.703726 161.172  L 79.488 161.172  z " clip-path="url(#pdf69ea3f83)" style="fill: #a7b0ff" />
+   </g>
+   <g id="patch_6">
+    <path d="M 79.488 219.78  L 170.870811 219.78  L 170.870811 200.772  L 79.488 200.772  z " clip-path="url(#pdf69ea3f83)" style="fill: #a7b0ff" />
+   </g>
+   <g id="patch_7">
+    <path d="M 79.488 259.38  L 179.507246 259.38  L 179.507246 240.372  L 79.488 240.372  z " clip-path="url(#pdf69ea3f83)" style="fill: #a7b0ff" />
+   </g>
+   <g id="patch_8">
+    <path d="M 79.488 298.98  L 177.756617 298.98  L 177.756617 279.972  L 79.488 279.972  z " clip-path="url(#pdf69ea3f83)" style="fill: #a7b0ff" />
+   </g>
+   <g id="patch_9">
+    <path d="M 79.488 338.58  L 178.923703 338.58  L 178.923703 319.572  L 79.488 319.572  z " clip-path="url(#pdf69ea3f83)" style="fill: #a7b0ff" />
+   </g>
+   <g id="patch_10">
+    <path d="M 79.488 378.18  L 176.005989 378.18  L 176.005989 359.172  L 79.488 359.172  z " clip-path="url(#pdf69ea3f83)" style="fill: #a7b0ff" />
+   </g>
+   <g id="patch_11">
+    <path d="M 178.806994 100.98  L 254.084023 100.98  L 254.084023 81.972  L 178.806994 81.972  z " clip-path="url(#pdf69ea3f83)" style="fill: #626fbc" />
+   </g>
+   <g id="patch_12">
+    <path d="M 170.403977 140.58  L 227.35776 140.58  L 227.35776 121.572  L 170.403977 121.572  z " clip-path="url(#pdf69ea3f83)" style="fill: #626fbc" />
+   </g>
+   <g id="patch_13">
+    <path d="M 169.703726 180.18  L 218.604617 180.18  L 218.604617 161.172  L 169.703726 161.172  z " clip-path="url(#pdf69ea3f83)" style="fill: #626fbc" />
+   </g>
+   <g id="patch_14">
+    <path d="M 170.870811 219.78  L 220.00512 219.78  L 220.00512 200.772  L 170.870811 200.772  z " clip-path="url(#pdf69ea3f83)" style="fill: #626fbc" />
+   </g>
+   <g id="patch_15">
+    <path d="M 179.507246 259.38  L 254.084023 259.38  L 254.084023 240.372  L 179.507246 240.372  z " clip-path="url(#pdf69ea3f83)" style="fill: #626fbc" />
+   </g>
+   <g id="patch_16">
+    <path d="M 177.756617 298.98  L 232.142811 298.98  L 232.142811 279.972  L 177.756617 279.972  z " clip-path="url(#pdf69ea3f83)" style="fill: #626fbc" />
+   </g>
+   <g id="patch_17">
+    <path d="M 178.923703 338.58  L 235.410651 338.58  L 235.410651 319.572  L 178.923703 319.572  z " clip-path="url(#pdf69ea3f83)" style="fill: #626fbc" />
+   </g>
+   <g id="patch_18">
+    <path d="M 176.005989 378.18  L 286.99584 378.18  L 286.99584 359.172  L 176.005989 359.172  z " clip-path="url(#pdf69ea3f83)" style="fill: #626fbc" />
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="259.335909" y="94.649281" transform="rotate(-0 259.335909 94.649281)">14.96</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="232.609646" y="134.249281" transform="rotate(-0 232.609646 134.249281)">12.67</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="223.856503" y="173.849281" transform="rotate(-0 223.856503 173.849281)">11.92</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="225.257006" y="213.449281" transform="rotate(-0 225.257006 213.449281)">12.04</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="259.335909" y="253.049281" transform="rotate(-0 259.335909 253.049281)">14.96</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="237.394697" y="292.649281" transform="rotate(-0 237.394697 292.649281)">13.08</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="240.662537" y="332.249281" transform="rotate(-0 240.662537 332.249281)">13.36</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="292.247726" y="371.849281" transform="rotate(-0 292.247726 371.849281)">17.78</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_19">
+     <path d="M 84.93624 40.718359  L 98.73624 40.718359  L 98.73624 32.668359  L 84.93624 32.668359  z " style="fill: #a7b0ff" />
+    </g>
+    <g id="text_23">
+     <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="107.93624" y="40.718359" transform="rotate(-0 107.93624 40.718359)">Rotation</text>
+    </g>
+    <g id="patch_20">
+     <path d="M 173.279599 40.718359  L 187.079599 40.718359  L 187.079599 32.668359  L 173.279599 32.668359  z " style="fill: #626fbc" />
+    </g>
+    <g id="text_24">
+     <text style="font-size: 11.5px; font-family: 'DejaVu Sans', Arial, sans-serif; text-anchor: start; fill: #f5f5f7" x="196.279599" y="40.718359" transform="rotate(-0 196.279599 40.718359)">Shape</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdf69ea3f83">
+   <rect x="79.488" y="61.776" width="245.088" height="332.64" />
+  </clipPath>
+ </defs>
+</svg>
