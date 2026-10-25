@@ -168,7 +168,7 @@
           <div><span>VERSUS OPM</span><strong>6.6–6.7<small>×</small></strong><p>Ratio of reported runtimes</p></div>
           <div><span>VERSUS TSM</span><strong>766–1,323<small>×</small></strong><p>Ratio of reported runtimes</p></div>
         </div>
-        <p class="plot-source">Source: <a href="assets/papers/main-wacv.pdf#page=7" target="_blank" rel="noopener">main paper, Table 5</a>. Each sequence contains 28,887 points; sequences 1–2 have 10 frames and sequences 3–4 have 99. <a href="data/dense-table5.csv" download>Download data ↗</a></p>
+        <p class="plot-source">Source: <a href="assets/papers/main-wacv.pdf#page=7" target="_blank" rel="noopener">main paper, Table 5</a>. Each sequence contains 28,887 points; sequences 1–2 have 10 frames and sequences 3–4 have 99. </p>
       </article>
 
       <div class="plots-pair">
@@ -178,10 +178,10 @@
             <a class="plot-image-link" href="assets/plots/mocap-tradeoff.svg" data-lightbox data-caption="MoCap accuracy–runtime tradeoff. Each point is an unweighted arithmetic mean over the same eight sequences in main Table 3. Horizontal axis: shape-stage runtime only, logarithmic seconds. Vertical axis: mean normalized 3D error, linear. Lower and left are better." aria-label="Enlarge the motion capture accuracy and runtime plot">
               <picture><source media="(max-width:600px)" srcset="assets/plots/mocap-tradeoff-mobile.svg"><img src="assets/plots/mocap-tradeoff.svg" width="475" height="374" loading="lazy" alt="Mean normalized 3D error versus mean shape-stage runtime over eight sequences. Ours: 5.64 seconds and 0.0405 error; OPM: 12.08 seconds and 0.0399; R-BMM: 14.22 seconds and 0.0463; TSM: 28.94 seconds and 0.0305; BMM: 125.87 seconds and 0.1245."></picture>
             </a>
-            <figcaption><span>Shape stage · mean of 8 sequences</span><a href="assets/plots/mocap-tradeoff.svg" download>SVG ↓</a></figcaption>
+            <figcaption><span>Shape stage · mean of 8 sequences</span></figcaption>
           </figure>
           <details class="plot-data" data-table="mocap-means" hidden><summary>View exact values <span aria-hidden="true">+</span></summary><div class="data-table-scroll" tabindex="0" role="region" aria-label="Motion capture mean error and runtime data table"></div></details>
-          <p class="plot-source">Arithmetic means calculated from <a href="assets/papers/main-wacv.pdf#page=7" target="_blank" rel="noopener">main paper, Table 3</a>. Runtime covers shape recovery with rotations fixed. <a href="data/mocap-shape-table3.csv" download>Download sequence data ↗</a></p>
+          <p class="plot-source">Arithmetic means calculated from <a href="assets/papers/main-wacv.pdf#page=7" target="_blank" rel="noopener">main paper, Table 3</a>. Runtime covers shape recovery with rotations fixed.</p>
         </article>
 
         <article class="plot-card" id="stage-benchmarks">
@@ -190,14 +190,14 @@
             <a class="plot-image-link" href="assets/plots/stage-timing.svg" data-lightbox data-caption="Our solver's stage-wise times on eight MoCap sequences. Rotation and shape times add to each labeled total; the axis starts at zero. Supplementary Table 14." aria-label="Enlarge the stage-wise timing plot">
               <picture><source media="(max-width:600px)" srcset="assets/plots/stage-timing-mobile.svg"><img src="assets/plots/stage-timing.svg" width="475" height="374" loading="lazy" alt="Stacked horizontal bars separate rotation and shape recovery time. Drink has 8.51 seconds for rotation and 6.45 seconds for shape, totaling 14.96 seconds for 1,102 frames."></picture>
             </a>
-            <figcaption><span>Our solver · linear seconds · rotation + shape</span><a href="assets/plots/stage-timing.svg" download>SVG ↓</a></figcaption>
+            <figcaption><span>Our solver · linear seconds · rotation + shape</span></figcaption>
           </figure>
           <details class="plot-data" data-table="stage-times" hidden><summary>View exact values <span aria-hidden="true">+</span></summary><div class="data-table-scroll" tabindex="0" role="region" aria-label="Per-sequence rotation shape and total runtime data table"></div></details>
-          <p class="plot-source">Source: <a href="assets/papers/supp-wacv.pdf#page=8" target="_blank" rel="noopener">supplement, Table 14</a>. Drink spans 1,102 frames and 41 points; its total solve takes 14.96 seconds. <a href="data/stage-breakdown-table14.csv" download>Download data ↗</a></p>
+          <p class="plot-source">Source: <a href="assets/papers/supp-wacv.pdf#page=8" target="_blank" rel="noopener">supplement, Table 14</a>. Drink spans 1,102 frames and 41 points; its total solve takes 14.96 seconds.</p>
         </article>
       </div>
 
-      <p class="timing-note" id="timing-note">All plots use the paper’s reported measurements. Hardware and released implementations vary; see the experimental setup for timing conditions. <a href="data/PROVENANCE.md" target="_blank" rel="noopener">Data sources and definitions ↗</a></p>
+      <p class="timing-note" id="timing-note">All plots use the paper’s reported measurements. Hardware and released implementations vary; see the experimental setup for timing conditions.</p>
     </section>
 
 
@@ -215,7 +215,7 @@
     </section>
 
     <!-- VIDEO: direct YouTube link. Change data-embed to true after enabling embedding on YouTube. -->
-    <section class="video-section" id="demo" aria-labelledby="demo-title"><div class="wrap section"><div class="section-top"><div><span class="eyebrow">05 / SEE IT IN MOTION</span><h2 id="demo-title">The reconstructions,<br>in motion.</h2></div><a class="text-link" href="https://www.youtube.com/watch?v=NO25k2dfSFE" target="_blank" rel="noopener">Watch on YouTube <svg><use href="#icon-external"/></svg></a></div><div class="video-frame" id="video-frame"><a class="video-poster" id="play-demo" data-embed="false" href="https://www.youtube.com/watch?v=NO25k2dfSFE" target="_blank" rel="noopener" aria-label="Watch the No Cones, No Duals reconstruction demo on YouTube"><div class="video-poster-art"><img src="assets/images/WACV-2027-first-slide.png" width="3038" height="493" loading="lazy" alt="Representative observed objects from the reconstruction benchmark."></div><span class="play-disc"><svg><use href="#icon-play"/></svg></span>WATCH THE DEMO ON YOUTUBE</span></span><span class="video-corner">WACV 2027 ↗</span></a></div><p class="video-note"><a href="https://www.youtube.com/watch?v=NO25k2dfSFE" target="_blank" rel="noopener">Watch the full reconstruction demonstration on YouTube</a>. Poster imagery is from the paper’s benchmark figures.</p></div></section>
+    <section class="video-section" id="demo" aria-labelledby="demo-title"><div class="wrap section"><div class="section-top"><div><span class="eyebrow">05 / SEE IT IN MOTION</span><h2 id="demo-title">The reconstructions,<br>in motion.</h2></div><a class="text-link" href="https://www.youtube.com/watch?v=NO25k2dfSFE" target="_blank" rel="noopener">Watch on YouTube <svg><use href="#icon-external"/></svg></a></div><div class="video-frame" id="video-frame"><a class="video-poster" id="play-demo" data-embed="false" href="https://www.youtube.com/watch?v=NO25k2dfSFE" target="_blank" rel="noopener" aria-label="Watch the No Cones, No Duals reconstruction demo on YouTube"><div class="video-poster-art"><img src="assets/images/WACV-2027-first-slide.png" width="3038" height="493" loading="lazy" alt="Representative observed objects from the reconstruction benchmark."></div><span class="play-disc"><svg><use href="#icon-play"/></svg></span>WATCH THE DEMO ON YOUTUBE</span></span><span class="video-corner">WACV 2027 ↗</span></a></div><p class="video-note"><a href="https://www.youtube.com/watch?v=NO25k2dfSFE" target="_blank" rel="noopener">Watch the full reconstruction demonstration on YouTube</a></p></div></section>
 
     <!-- RESOURCES / CITATION -->
     <section class="section wrap resources" id="citation" aria-labelledby="citation-title"><div class="citation-intro"><span class="eyebrow">06 / TAKE A CLOSER LOOK</span><h2 id="citation-title">Read. Explore.<br>Build on it.</h2><p>Full derivations, experimental details, ablations, and additional reconstructions are available in the paper and supplement.</p><div class="resource-links"><a href="assets/papers/main-wacv.pdf" target="_blank" rel="noopener"><span><svg><use href="#icon-paper"/></svg>Main paper</span><span>PDF ↗</span></a><a href="assets/papers/supp-wacv.pdf" target="_blank" rel="noopener"><span><svg><use href="#icon-paper"/></svg>Supplementary material</span><span>PDF ↗</span></a><a href="citation.bib" download><span><svg><use href="#icon-copy"/></svg>Citation</span><span>BIB ↓</span></a></div></div><div class="citation-card"><div class="citation-header"><span>BibTeX</span><button class="copy-button" id="copy-citation" type="button"><svg><use href="#icon-copy"/></svg><span>Copy citation</span></button></div><pre><code id="bibtex">@inproceedings{kumar2027nocones,
@@ -223,10 +223,10 @@
   author = {Kumar, Suryansh},
   booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
   year = {2027}
-}</code></pre><div class="citation-footer"><span>Accepted at WACV 2027</span><span id="copy-status" role="status" aria-live="polite"></span></div></div></section>
+}</code></pre><div class="citation-footer"><span>Accepted for publication at IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) 2027</span><span id="copy-status" role="status" aria-live="polite"></span></div></div></section>
   </main>
 
-  <footer class="site-footer"><div class="wrap footer-inner"><a class="wordmark" href="#home"><span>No Cones, No Duals<span class="brand-dot">.</span></span></a><p>Suryansh Kumar · Texas A&amp;M University<br><span>WACV 2027</span></p><a href="#home" class="back-top">Back to top ↑</a></div></footer>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="wordmark" href="#home"><span>No Cones, No Duals<span class="brand-dot">.</span></span></a><p> © Suryansh Kumar · Visual and Spatial AI Lab<br><span>WACV 2027</span></p><a href="#home" class="back-top">Back to top ↑</a></div></footer>
   <dialog class="lightbox" id="figure-dialog" aria-label="Expanded research figure"><div class="lightbox-toolbar"><span>RESEARCH FIGURE</span><button id="close-lightbox" class="icon-button" type="button" aria-label="Close expanded figure"><svg><use href="#icon-close"/></svg></button></div><div class="lightbox-image-wrap"><img id="lightbox-image" src="assets/images/first-stage.png" alt=""></div><div class="lightbox-footer"><p id="lightbox-caption"></p><a id="lightbox-original" href="assets/images/first-stage.png" target="_blank" rel="noopener">Open full resolution ↗</a></div></dialog>
 </body>
 </html>
